@@ -1,0 +1,8 @@
+*.pyc
+*.md
+*.DS_Store
+*.swp
+*.swo
+*.h5
+.cache/
+*.log
