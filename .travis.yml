@@ -5,7 +5,7 @@ matrix:
     - os: linux
       python: 2.7
     - os: osx
-      python: 2.7
+      language: generic
 
 install:
   - pip install -r scripts/requirements.txt
