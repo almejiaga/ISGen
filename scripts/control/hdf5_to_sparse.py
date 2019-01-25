@@ -62,13 +62,16 @@ def main(args):
         for i in range(1, len(sim_slices)):
             vprint("Loading up to simulation", sim_slices[i])
             loaded_dat = node[:, sim_slices[i-1] : sim_slices[i]]
+            ## Convert to ints to keep scipy happy
+            loaded_dat_int = loaded_dat.astype(int)
+            assert(np.all((loaded_dat - loaded_dat_int) == 0))
             vprint("Block shape:", loaded_dat.shape)
 
             ## Construct new rows, cols, and data for coo_matrix. Each
             ## simulation gets added as a block to the end.
             rows = np.append(sp_array.row, r_slice)
             data = np.append(sp_array.data, d_slice)
-            cols = np.append(sp_array.col, loaded_dat.ravel())
+            cols = np.append(sp_array.col, loaded_dat_int.ravel())
 
             ## Construct sparse coo_matrix from new data.
             sp_array = sparse.coo_matrix((data, (rows, cols)))
@@ -79,6 +82,9 @@ def main(args):
         ## Load leftover columns
         vprint("Loading up to simulation", node.shape[1] - 1)
         loaded_dat = node[:, sim_slices[-1] :]
+        ## Convert to ints to keep scipy happy
+        loaded_dat_int = loaded_dat.astype(int)
+        assert(np.all((loaded_dat - loaded_dat_int) == 0))
         vprint("Block shape:", loaded_dat.shape)
         num_loaded_sims = loaded_dat.shape[1]
         r_slice = sorted(r * num_loaded_sims)
@@ -88,9 +94,10 @@ def main(args):
         ## gets added as a block to the end.
         rows = np.append(sp_array.row, r_slice)
         data = np.append(sp_array.data, d_slice)
-        cols = np.append(sp_array.col, loaded_dat.ravel())
+        cols = np.append(sp_array.col, loaded_dat_int.ravel())
 
         ## Construct sparse coo_matrix from new data.
+        # import IPython; IPython.embed()
         sp_array = sparse.coo_matrix((data, (rows, cols)))
         sp_array = sp_array.tocsc().tocoo()
         vprint("Condensed shape:", sp_array.shape)
