@@ -6,3 +6,4 @@
 *.h5
 .cache/
 *.log
+scripts/test/.pytest_cache/*
