@@ -8,7 +8,7 @@ matrix:
       language: generic
 
 install:
-  - pip install -r scripts/requirements.txt
+  - pip install --user -r scripts/requirements.txt
 
 script:
   - cd scripts/test && pytest -v
