@@ -63,7 +63,16 @@ This file contains the individual IDs present in the genealogy with the correspo
 20	4
 21	4
 ```
+## 1.4) Regions to test file
+This file contains the regions where you want to estimate the frequency of this variant. At the end of the file you have to add the region "All Probands", because this software gives you an overall estimate.
 
+```
+1
+2
+3
+4
+All Probands
+```
 
 ---
 #   2) Generate your genetic map file in increasing genetic distance for ARG_needle
