@@ -6,7 +6,7 @@ Importance sampling in large genealogies
 
 #   1) Prepare your input files
 
-For running ISgen you will need a four files:
+For running ISgen you will need four files:
 
 ## 1.1) ped file
 
