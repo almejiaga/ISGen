@@ -46,11 +46,24 @@ The file is a one column file with the IDs that correspond to Het IDs, like this
 ```
 If you also have homozygous IDs, they should be listed in another file
 
-With this two files you can run the climbing part of this software. If you also want to estimate the regional frequencies, you need two additional files:
+With these two files you can run the climbing part of this software. If you also want to estimate the regional frequencies, you need two additional files:
 
-## 1.3) map folder
+## 1.3) Regions file
 
-Note: this script recognizes vcfs files that end in .vcf.gz
+This file contains the individual IDs present in the genealogy with the corresponding region for each invidual:
+
+```
+1	1
+13	1
+2	2
+3	2
+16	2
+18	3
+19	3
+20	4
+21	4
+```
+
 
 ---
 #   2) Generate your genetic map file in increasing genetic distance for ARG_needle
