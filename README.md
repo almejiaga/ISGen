@@ -15,15 +15,11 @@ Individual_id father_id mother_id
 ## 1.2) List of heterozygous and/or homozygous IDs
 
 The file is a one column file with the IDs that correspond to Het IDs, like this:
-
+```
 1
-
 2
-
 3
-
-4
-
+```
 If you also have homozygous IDs, they should be listed in another file
 
 With this two files you can run the climbing part of this software. If you also want to estimate the regional frequencies, you need two additional files:
