@@ -10,8 +10,32 @@ For running ISgen you will need a few files:
 ## 1.1) ped file
 
 The ped file is a standard plink ped file, with at least three columns:
-
-Individual_id father_id mother_id
+```
+ind father mother sex
+1 11 12 1
+2 15 14 2
+3 15 14 2
+11 102 101 1
+12 0 0 2
+13 102 101 1
+14 0 0 2
+15 103 104 1
+16 103 104 2
+18 105 106 2
+19 105 106 2
+20 107 108 2
+21 107 108 1
+101 0 0 2
+102 202 201 1
+103 0 0 1
+104 202 201 2
+105 202 201 1
+106 0 0 2
+107 202 201 1
+108 0 0 2
+201 0 0 2
+202 0 0 1
+```
 ## 1.2) List of heterozygous and/or homozygous IDs
 
 The file is a one column file with the IDs that correspond to Het IDs, like this:
