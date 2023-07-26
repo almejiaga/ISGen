@@ -92,22 +92,26 @@ ipython==5.4.1
 attr==0.3.1
 subprocess32==3.5.3
 ```
+However, some versions of some packages are not available right now because they are too old. In my experience, ISgen can run just fine with the following versions:
 
-## 2.1) map folder
-We have to create a map folder that will store the .bim files for each chromosome
+```
+matplotlib==2.2.5+
+profilehooks==1.10.0
+pandas==0.24.2+
+scipy==1.2.3+
+seaborn==0.8.1+
+tables==3.5.2+
+attrs==17.4.0+
+numpy==1.16.6+
+pytest==4.6.11+
+ipython==5.4.1
+attr==0.3.1
+subprocess32==3.5.2+
+```
 
-## 2.2) plink_maps folder
-We have to create a plink_maps folder that stores the genetic map files for each chromosome in plink format. This files can be found in different resources, such as: put the link here. 
+# 3) Running ISGen
+To run all the steps of the software, you can use the script run.py, the following arguments are needed:
 
-## 2.3) Generate a list of excluded variants from the analysis
-Now that we have our files in the respective folders, we just have to run the script in this way in linux:
-
-Rscript geneticmapfilepreparation.R
-
-After this, you will get a list of variants that are going to be excluded from the analysis only for the fact that the genetic distance between them is to small that ARG_needle is not able to say that you have the variants in an increasing number. 
-
-# 3) excluding the variants from your vcf to be able to run ARG_needle
-Run the script:
 
 bash filteringagain.sh
 
