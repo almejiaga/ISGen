@@ -6,7 +6,8 @@ Importance sampling in large genealogies
 
 #   1) Prepare your input files
 
-For running ISgen you will need a few files:
+For running ISgen you will need a four files:
+
 ## 1.1) ped file
 
 The ped file is a standard plink ped file, with at least three columns:
@@ -75,8 +76,22 @@ All Probands
 ```
 
 ---
-#   2) Generate your genetic map file in increasing genetic distance for ARG_needle
-for this section, we will use the .bim file created in the last step. the R script is designed to work automatically but we need to create two folders in order to the script to work properly
+#   2) Install all the dependencies required for this Software in a Python 2 environment
+The software was built in Python 2 and requires some specific versions of some python packages. The original requirements for running this software can be found in the requirements.txt file
+```
+matplotlib==2.2.2
+profilehooks==1.10.0
+pandas==0.22.0
+scipy==1.2.0
+seaborn==0.8.1
+tables==3.4.2
+attrs==17.4.0
+numpy==1.14
+pytest==3.5.0
+ipython==5.4.1
+attr==0.3.1
+subprocess32==3.5.3
+```
 
 ## 2.1) map folder
 We have to create a map folder that will store the .bim files for each chromosome
