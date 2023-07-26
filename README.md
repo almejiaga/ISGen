@@ -111,8 +111,20 @@ subprocess32==3.5.2+
 
 # 3) Running ISGen
 To run all the steps of the software, you can use the script run.py, the following arguments are needed:
-
-
-bash filteringagain.sh
-
-With this script you will create a folder named "ARG_files" and the .haps and .samples files will be stored there.
+```
+python run.py \ #script to run
+-b ${dropping_simulations_file}.hdf5 \ #file to store all the allele dropping simulations, you should add the .hdf5 in order to open the file later
+-p ${pedigree_file} \  #input pedigree file with the extension
+-o ${climbing_results}.hdf5 \ #file to store the output of the climbing algorithm (the most likely founder couple with their likelihood)
+-V theresults \ #Path to output validation results
+-n controllikeliehoodHYDIN.hdf5 \ #File to store control likelihoods for each
+--freq_params 'pop_size,num_sample,num_obs_carriers' \   # Parameters describing observations of the population allele frequency, in the format 'pop_size,num_sample,num_obs_carriers'
+-i 1000 \ #Number of allele drops to perform from each individual in the pedigree
+-I 1000 \ #Number of allele climbing iterations to perform from the provided homs and hets
+--hetfile ${het_file} \ #File containing heterozygous probands
+--homfile ${hom_file} \ #ile containing homozyogous probands
+-P  ${regions}.txt \ # File listing the region of each proband,with no header. By default all probands are assumed to be within a single region
+-F \ Flag to calculate expected regional allele frequencies
+-r ${regions_to_test}.txt \ #File listing regions for which to calculate expected allele frequencies
+-g ${frequencies}.txt \ # File to store simulation output in csv format for the regional frequencies
+```
