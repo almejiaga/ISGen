@@ -17,8 +17,11 @@ Individual_id father_id mother_id
 The file is a one column file with the IDs that correspond to Het IDs, like this:
 
 1
+
 2
+
 3
+
 4
 
 If you also have homozygous IDs, they should be listed in another file
