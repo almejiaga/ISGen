@@ -4,7 +4,7 @@
 Importance sampling in large genealogies. This software can be used for inferring the transmission history of rare alleles that come from a common ancestor (single founder event).
 The Software can be divided in two steps:
 
-1)Allele Climbing: a common founder between all the proband is identified using a genealogy.
+1) Allele Climbing: a common founder between all the proband is identified using a genealogy.
 
 2) Allele dropping: a frequency estimation in different regions is performed using the descending genealogy of the founder couple.
 
