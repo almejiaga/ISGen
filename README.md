@@ -41,6 +41,9 @@ ind father mother sex
 201 0 0 2
 202 0 0 1
 ```
+
+Note: all the individuals have to be listed in the file. In the case of a founder individual, just add the code in the first column and set parents to 0, which is the definition of a founder for the software
+
 ## 1.2) List of heterozygous and/or homozygous IDs
 
 The file is a one column file with the IDs that correspond to Het IDs, like this:
